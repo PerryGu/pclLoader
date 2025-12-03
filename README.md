@@ -292,7 +292,7 @@ For full usage examples and command reference, see **USAGE.md**.
 ------------------------------------------------------------------------
 
 
-For full usage documentation, see [docs/USAGE.md](docs/USAGE.md)
+For full usage documentation, see [docs/USAGE.md](USAGE.md)
 
 # Dependencies
 
