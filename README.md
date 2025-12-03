@@ -26,58 +26,47 @@ system integration.
 
 ## Demo
 
-### 🎥 Video Showcase
+## ▶ Video Showcase (3 in a row)
 
-<!-- pclLoader -->
-[![pclLoader Demo](media/load_point_cloud_sequences.png)](https://www.youtube.com/watch?v=hNdi2yLKMfU)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=hNdi2yLKMfU">
+    <img src="media/load_point_cloud_sequences.png" width="30%">
+  </a>
+  <a href="https://www.youtube.com/watch?v=ksgL64EMrjg">
+    <img src="media/raycaster_from_cam_center.png" width="30%">
+  </a>
+  <a href="https://www.youtube.com/watch?v=tLRw0yPXXZ8">
+    <img src="media/display_particles_type.png" width="30%">
+  </a>
+</p>
 
-<!-- pclRaycaster -->
-[![pclRaycaster Demo](media/raycaster_from_cam_center.png)](https://www.youtube.com/watch?v=ksgL64EMrjg)
 
-<!-- pclSequencer -->
-[![pclSequencer Demo](media/display_particles_type.png)](https://www.youtube.com/watch?v=tLRw0yPXXZ8)
 
 
 ---
 
-### 🖼 Image Gallery
+## 🖼 Image Gallery (3×3 Grid)
 
-#### **Clustering**
-<img src="media/clustering_step1.png" width="420">  
-<img src="media/clustering_step2.png" width="420">  
-<img src="media/clustering_step3.png" width="420">  
-<img src="media/clustering_step4.png" width="420">
+<table>
+  <tr>
+    <td><img src="media/clustering_step1.png" height="220px"></td>
+    <td><img src="media/clustering_step2.png" height="220px"></td>
+    <td><img src="media/clustering_step3.png" height="220px"></td>
+  </tr>
+  <tr>
+    <td><img src="media/clustering_step4.png" height="220px"></td>
+    <td><img src="media/display_particles_type.png" height="220px"></td>
+    <td><img src="media/load_point_cloud_sequences.png" height="220px"></td>
+  </tr>
+  <tr>
+    <td><img src="media/only_points_inside_container.png" height="220px"></td>
+    <td><img src="media/raycaster_from_cam_center.png" height="220px"></td>
+    <td><img src="media/raycaster_from_cam_pixel_pos.png" height="220px"></td>
+  </tr>
+</table>
 
-#### **Container Filtering**
-<img src="media/only_points_inside_container.png" width="420">  
-<img src="media/only_points_outside_container.png" width="420">
 
-#### **Raycasting**
-<img src="media/raycaster_from_cam_center.png" width="420">  
-<img src="media/raycaster_from_cam_pixel_pos.png" width="420">
 
-#### **Sequencer Display**
-<img src="media/display_particles_type.png" width="420">
-
-### Point-Cloud Loading & Playback
-
-PLACE IMAGE HERE
-
-### Container Filtering
-
-PLACE IMAGE HERE
-
-### Raycasting Visualization
-
-PLACE IMAGE HERE
-
-### Clustering & Trajectories
-
-PLACE IMAGE HERE
-
-### nParticles Display
-
-PLACE IMAGE HERE
 
 ------------------------------------------------------------------------
 
