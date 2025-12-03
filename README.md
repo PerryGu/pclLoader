@@ -47,26 +47,14 @@ system integration.
 
 ## 🖼 Image Gallery (3×3 Grid)
 
-<table>
-  <tr>
-    <td><img src="media/clustering_step1.png" height="220px"></td>
-    <td><img src="media/clustering_step2.png" height="220px"></td>
-    <td><img src="media/clustering_step3.png" height="220px"></td>
-  </tr>
-  <tr>
-    <td><img src="media/clustering_step4.png" height="220px"></td>
-    <td><img src="media/display_particles_type.png" height="220px"></td>
-    <td><img src="media/load_point_cloud_sequences.png" height="220px"></td>
-  </tr>
-  <tr>
-    <td><img src="media/only_points_inside_container.png" height="220px"></td>
-    <td><img src="media/raycaster_from_cam_center.png" height="220px"></td>
-    <td><img src="media/raycaster_from_cam_pixel_pos.png" height="220px"></td>
-  </tr>
-</table>
+pclLoader
+<table> <tr> <td><img src="media/clustering_step1.png" height="220px"></td> <td><img src="media/clustering_step2.png" height="220px"></td> <td><img src="media/clustering_step3.png" height="220px"></td> </tr> </table>
 
+pclCluster
+<table> <tr> <td><img src="media/clustering_step4.png" height="220px"></td> <td><img src="media/display_particles_type.png" height="220px"></td> <td><img src="media/load_point_cloud_sequences.png" height="220px"></td> </tr> </table>
 
-
+pclRaycaster
+<table> <tr> <td><img src="media/raycaster_from_cam_center.png" height="220px"></td> <td><img src="media/raycaster_from_cam_pixel_pos.png" height="220px"></td> <td><img src="media/only_points_inside_container.png" height="220px"></td> </tr> </table>
 
 ------------------------------------------------------------------------
 
@@ -211,8 +199,7 @@ pclLoader (loads files, filters by container)
 
 ## Project Structure
 
-## Project Structure
-
+```markdown
 📁 pcl_loader/
 │
 ├── 📁 src/
@@ -280,12 +267,10 @@ pclLoader (loads files, filters by container)
 ├── 📄 USAGE.md
 └── 📄 .gitignore
 
-
-
-
-
+```
 
 ------------------------------------------------------------------------
+
 ## Installation
 
 1. Copy the compiled `.mll` file to your Maya plugin directory:
