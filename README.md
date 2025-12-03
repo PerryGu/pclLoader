@@ -26,7 +26,7 @@ system integration.
 
 ## Demo
 
-## ▶ Video Showcase (3 in a row)
+## ▶ Video Showcase 
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=hNdi2yLKMfU">
@@ -42,10 +42,9 @@ system integration.
 
 
 
-
 ---
 
-## 🖼 Image Gallery (3×3 Grid)
+## 🖼 Image Gallery
 
 pclLoader
 <table> <tr> <td><img src="media/clustering_step1.png" height="220px"></td> <td><img src="media/clustering_step2.png" height="220px"></td> <td><img src="media/clustering_step3.png" height="220px"></td> </tr> </table>
