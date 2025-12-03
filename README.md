@@ -92,7 +92,7 @@ makes the suite maintainable and scalable.
 
 # Node Breakdown (High-Level Responsibilities)
 
-## pclLoader --- The Central Data-Source Node
+## pclLoader - The Central Data-Source Node
 
 The main node that loads and caches point cloud sequences.
 
@@ -109,7 +109,7 @@ The main node that loads and caches point cloud sequences.
 
 ------------------------------------------------------------------------
 
-## pclSequencer --- Point-Cloud Display (nParticles)
+## pclSequencer - Point-Cloud Display (nParticles)
 
 Visualizes point-cloud frames in Maya.
 
@@ -123,7 +123,7 @@ Visualizes point-cloud frames in Maya.
 
 ------------------------------------------------------------------------
 
-## pclRaycaster --- Camera-Based Raycasting
+## pclRaycaster - Camera-Based Raycasting
 
 Marks points visible in a connected camera.
 
@@ -137,7 +137,7 @@ Marks points visible in a connected camera.
 
 ------------------------------------------------------------------------
 
-## pclCluster --- Player Separation & Trajectory Extraction
+## pclCluster - Player Separation & Trajectory Extraction
 
 Performs spatial clustering on point clouds.
 
