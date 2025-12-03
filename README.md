@@ -26,6 +26,39 @@ system integration.
 
 ## Demo
 
+### 🎥 Video Showcase
+
+<!-- pclLoader -->
+[![pclLoader Demo](media/load_point_cloud_sequences.png)](https://www.youtube.com/watch?v=hNdi2yLKMfU)
+
+<!-- pclRaycaster -->
+[![pclRaycaster Demo](media/raycaster_from_cam_center.png)](https://www.youtube.com/watch?v=ksgL64EMrjg)
+
+<!-- pclSequencer -->
+[![pclSequencer Demo](media/display_particles_type.png)](https://www.youtube.com/watch?v=tLRw0yPXXZ8)
+
+
+---
+
+### 🖼 Image Gallery
+
+#### **Clustering**
+<img src="media/clustering_step1.png" width="420">  
+<img src="media/clustering_step2.png" width="420">  
+<img src="media/clustering_step3.png" width="420">  
+<img src="media/clustering_step4.png" width="420">
+
+#### **Container Filtering**
+<img src="media/only_points_inside_container.png" width="420">  
+<img src="media/only_points_outside_container.png" width="420">
+
+#### **Raycasting**
+<img src="media/raycaster_from_cam_center.png" width="420">  
+<img src="media/raycaster_from_cam_pixel_pos.png" width="420">
+
+#### **Sequencer Display**
+<img src="media/display_particles_type.png" width="420">
+
 ### Point-Cloud Loading & Playback
 
 PLACE IMAGE HERE
