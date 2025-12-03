@@ -26,19 +26,34 @@ system integration.
 
 ## Demo
 
-## ▶ Video Showcase 
+## 🎬 Video Showcase
 
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=hNdi2yLKMfU">
-    <img src="media/load_point_cloud_sequences.png" width="30%">
-  </a>
-  <a href="https://www.youtube.com/watch?v=ksgL64EMrjg">
-    <img src="media/raycaster_from_cam_center.png" width="30%">
-  </a>
-  <a href="https://www.youtube.com/watch?v=tLRw0yPXXZ8">
-    <img src="media/display_particles_type.png" width="30%">
-  </a>
-</p>
+<table>
+  <tr>
+    <td align="center"><strong>pclLoader</strong></td>
+    <td align="center"><strong>pclCluster</strong></td>
+    <td align="center"><strong>pclRaycaster</strong></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://www.youtube.com/watch?v=hNdi2yLKMfU">
+        <img src="media/load_point_cloud_sequences.png" width="300px">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.youtube.com/watch?v=tLRw0yPXXZ8">
+        <img src="media/display_particles_type.png" width="300px">
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.youtube.com/watch?v=ksgL64EMrjg">
+        <img src="media/raycaster_from_cam_center.png" width="300px">
+      </a>
+    </td>
+  </tr>
+</table>
+
+
 
 
 
