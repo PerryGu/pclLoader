@@ -288,6 +288,7 @@ pclLoader (loads files, filters by container)
    ```
    pclSequencerCmd -name "mySequencer" -pclLoader "myLoader";
    ```
+For full usage examples and command reference, see **USAGE.md**.
 ------------------------------------------------------------------------
 
 
