@@ -209,48 +209,80 @@ pclLoader (loads files, filters by container)
 
 ------------------------------------------------------------------------
 
-# Project Structure
+## Project Structure
 
-    pcl_loader/
-    │
-    ├── pclLoader/
-    │   ├── core/
-    │   │   ├── pclFrameCache.cpp
-    │   │   ├── pclFrameCache.h
-    │   │   ├── pclGeometryUtils.cpp
-    │   │   └── pclGeometryUtils.h
-    │   │
-    │   ├── pclCommandHelpers.cpp
-    │   ├── pclCommandHelpers.h
-    │   ├── pclContainer.cpp
-    │   ├── pclContainer.h
-    │   ├── pclLoader.cpp
-    │   ├── pclLoader.h
-    │   ├── pclLoaderCmd.cpp
-    │   ├── pclLoaderCmd.h
-    │   ├── pclUtilities.cpp
-    │   ├── pclUtilities.h
-    │   └── pluginMain.cpp
-    │
-    ├── pclSequencer/
-    │   ├── pclSequencer.cpp
-    │   └── pclSequencer.h
-    │
-    ├── pclRaycaster/
-    │   ├── pclRaycaster.cpp
-    │   ├── pclRaycaster.h
-    │   ├── pclRaycasterCmd.cpp
-    │   └── pclRaycasterCmd.h
-    │
-    ├── pclCluster/
-    │   ├── pclCluster.cpp
-    │   ├── pclCluster.h
-    │   ├── pclClusteringCmd.cpp
-    │   └── pclClusteringCmd.h
-    │
-    └── tests/
-        ├── README.md
-        └── testRunner.cpp
+## Project Structure
+
+📁 pcl_loader/
+│
+├── 📁 src/
+│   │
+│   ├── 📁 pclLoader/
+│   │   ├── 📁 core/
+│   │   │   ├── 📄 pclFrameCache.cpp
+│   │   │   ├── 📄 pclFrameCache.h
+│   │   │   ├── 📄 pclGeometryUtils.cpp
+│   │   │   ├── 📄 pclGeometryUtils.h
+│   │   │
+│   │   ├── 📄 pclLoader.cpp
+│   │   ├── 📄 pclLoader.h
+│   │   ├── 📄 pclLoaderCmd.cpp
+│   │   ├── 📄 pclLoaderCmd.h
+│   │   ├── 📄 pclCommandHelpers.cpp
+│   │   ├── 📄 pclCommandHelpers.h
+│   │   ├── 📄 pclContainer.cpp
+│   │   ├── 📄 pclContainer.h
+│   │   ├── 📄 pclUtilities.cpp
+│   │   ├── 📄 pclUtilities.h
+│   │   └── 📄 pluginMain.cpp
+│   │
+│   ├── 📁 pclSequencer/
+│   │   ├── 📄 pclSequencer.cpp
+│   │   ├── 📄 pclSequencer.h
+│   │   ├── 📄 pclSequencerCmd.cpp
+│   │   ├── 📄 pclSequencerCmd.h
+│   │
+│   ├── 📁 pclRaycaster/
+│   │   ├── 📄 pclRaycaster.cpp
+│   │   ├── 📄 pclRaycaster.h
+│   │   ├── 📄 pclRaycasterCmd.cpp
+│   │   ├── 📄 pclRaycasterCmd.h
+│   │
+│   ├── 📁 pclClustering/
+│   │   ├── 📄 pclCluster.cpp
+│   │   ├── 📄 pclCluster.h
+│   │   ├── 📄 pclClusteringCmd.cpp
+│   │   ├── 📄 pclClusteringCmd.h
+│   │
+│   └── 📁 (additional helper files if needed)
+│
+├── 📁 tests/
+│   ├── 📄 README.md
+│   ├── 📄 testRunner.cpp
+│   ├── 📄 pclUtilitiesTests.cpp
+│   │
+│   ├── 📁 core/
+│   │   ├── 📄 pclFrameCacheTests.cpp
+│   │   ├── 📄 pclGeometryUtilsTests.cpp
+│
+├── 📁 media/
+│   ├── 🖼 clustering_step1.png
+│   ├── 🖼 clustering_step2.png
+│   ├── 🖼 clustering_step3.png
+│   ├── 🖼 clustering_step4.png
+│   ├── 🖼 display_particles_type.png
+│   ├── 🖼 load_point_cloud_sequences.png
+│   ├── 🖼 only_points_inside_container.png
+│   ├── 🖼 raycaster_from_cam_center.png
+│   ├── 🖼 raycaster_from_cam_pixel_pos.png
+│
+├── 📄 README.md
+├── 📄 USAGE.md
+└── 📄 .gitignore
+
+
+
+
 
 
 ------------------------------------------------------------------------
