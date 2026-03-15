@@ -15,7 +15,7 @@ namespace
 {
 	// Plugin metadata
 	constexpr char kPluginVendor[] = "Guy Perry";
-	constexpr char kPluginVersion[] = "maya2016_1.0.1_open3D";
+	constexpr char kPluginVersion[] = "maya2020_1.0.1_open3D";
 	constexpr char kPluginRequiredApi[] = "vs_19";
 
 	// Registration data structures
