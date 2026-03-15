@@ -171,6 +171,26 @@ The plugin suite follows a modular architecture:
 - **Shared Utilities** (`pclUtilities`, `pclCommandHelpers`): Reusable Maya-aware functions
 
 ### Data Flow
+
+```
+pclLoader (loads files, filters by container)
+    ↓ (outPointsPosition, outPointsColor)
+    ├→ pclRaycaster (raycasting/frustum culling)
+    ├→ pclCluster (spatial clustering)
+    └→ pclSequencer (particle system export)
+```
+
+## Performance
+
+- **Multithreaded Loading**: Automatically uses multiple CPU cores for parallel file loading
+- **Frame Caching**: Loaded frames are cached to avoid redundant I/O
+- **Optimized Arrays**: Pre-allocated arrays and cached length calls for performance
+- **Connection-Based**: Nodes communicate via Maya's dependency graph (efficient)
+
+
+# Architecture Diagram
+### Data Flow
+
 ```mermaid
 graph TD
     %% Nodes definition
