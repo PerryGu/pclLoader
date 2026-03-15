@@ -72,14 +72,16 @@ pclRaycaster
 
 ------------------------------------------------------------------------
 
+
 ## Overview
 
-This plugin suite provides a complete solution for working with
-point-cloud sequences inside Maya. It was originally developed to
-support the needs of my team at Intel, handling large PLY/PCD datasets,
-frame-by-frame playback, interactive filtering, and generating
-point-cloud-derived information such as raycast hits or player
-trajectories.
+This plugin suite provides a high-performance solution for working with point-cloud sequences inside Maya. 
+The project was inspired by advanced data-processing workflows I developed during my tenure as a CG Engineer at Intel,
+where handling large-scale datasets and real-time playback was critical.
+
+Rebuilt entirely from scratch as a personal project, this suite implements those core concepts into a generalized, modular environment. 
+It supports **large-scale PLY/PCD datasets, frame-by-frame timeline playback, and interactive filtering**, 
+while enabling advanced features like camera-based 2D to 3D raycasting and spatial clustering trajectories within Maya's Dependency Graph.
 
 The system follows a modular architecture: every feature is implemented
 as an independent Maya node. Each node focuses on a single
@@ -169,47 +171,46 @@ The plugin suite follows a modular architecture:
 - **Shared Utilities** (`pclUtilities`, `pclCommandHelpers`): Reusable Maya-aware functions
 
 ### Data Flow
+```mermaid
+graph TD
+    %% Nodes definition
+    CMD[PclSequencerCmd<br/>'System Setup']
+    LOADER[pclLoader<br/>'The Central Hub & Logic']
+    
+    RAY[pclRaycaster<br/>'Camera 2D to 3D']
+    CLUS[pclCluster<br/>'Octree Logic']
+    SEQ[pclSequencer<br/>'Particle Map']
+    
+    CAM[Camera<br/>'Hit Points']
+    BBOX[BoundingBoxes<br/>'Segments & Path']
+    PART[mayaNParticles]
 
+    %% Connections
+    CMD -->|1. Creates & Connects| LOADER
+    
+    LOADER -->|2. OutPoints| RAY
+    LOADER -->|2. OutPoints| CLUS
+    LOADER -->|2. OutPoints| SEQ
+    
+    RAY --> CAM
+    CLUS --> BBOX
+    SEQ --> PART
+
+    %% Styling with subtle dark-theme colors
+    style CMD fill:#2D3748,stroke:#63B3ED,stroke-width:2px,color:#FFFFFF
+    style LOADER fill:#2D3748,stroke:#63B3ED,stroke-width:2px,color:#FFFFFF
+    
+    style RAY fill:#253237,stroke:#68D391,stroke-width:1px,color:#E2E8F0
+    style CLUS fill:#253237,stroke:#68D391,stroke-width:1px,color:#E2E8F0
+    style SEQ fill:#253237,stroke:#68D391,stroke-width:1px,color:#E2E8F0
+    
+    style CAM fill:#1A202C,stroke:#A0AEC0,stroke-width:1px,stroke-dasharray: 5 5,color:#CBD5E0
+    style BBOX fill:#1A202C,stroke:#A0AEC0,stroke-width:1px,stroke-dasharray: 5 5,color:#CBD5E0
+    style PART fill:#1A202C,stroke:#A0AEC0,stroke-width:1px,stroke-dasharray: 5 5,color:#CBD5E0
 ```
-pclLoader (loads files, filters by container)
-    ↓ (outPointsPosition, outPointsColor)
-    ├→ pclRaycaster (raycasting/frustum culling)
-    ├→ pclCluster (spatial clustering)
-    └→ pclSequencer (particle system export)
-```
-
-## Performance
-
-- **Multithreaded Loading**: Automatically uses multiple CPU cores for parallel file loading
-- **Frame Caching**: Loaded frames are cached to avoid redundant I/O
-- **Optimized Arrays**: Pre-allocated arrays and cached length calls for performance
-- **Connection-Based**: Nodes communicate via Maya's dependency graph (efficient)
 
 
-# Architecture Diagram
-
-                     ┌────────────────────────────────────┐
-                     │              pclLoader              │
-                     │   (Loads + Filters + Cache +        │
-                     │        Container Filtering)         │
-                     └────────────────────────────────────┘
-                                   │
-                                   ▼
-                     ┌────────────────────────────────────┐
-                     │             pclSequencer            │
-                     │       (Displays points via          │
-                     │              nParticles)            │
-                     └────────────────────────────────────┘
-
-
-                        Additional Processing Nodes:
-
-          ┌────────────────────────────┐      ┌────────────────────────────┐
-          │        pclRaycaster        │      │         pclCluster         │
-          │        (Raycasting)        │      │   (Clusters + Trajectories)│
-          └────────────────────────────┘      └────────────────────────────┘
-
-------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 
 ## Project Structure
 
@@ -292,7 +293,7 @@ pclLoader (loads files, filters by container)
    [Maya Install Path]/bin/plug-ins/
    ```
 2. Load the plugin in Maya:
-   - **Maya 2016+**: Windows → Settings/Preferences → Plug-in Manager
+   - **Maya 2020+**: Windows → Settings/Preferences → Plug-in Manager
    - Or use: `loadPlugin pclLoader.mll;`
 
 ------------------------------------------------------------------------
@@ -325,45 +326,36 @@ For full usage examples and command reference, see **USAGE.md**.
 
 For full usage documentation, see [docs/USAGE.md](USAGE.md)
 
-# Dependencies
+## 🛠 Technical Specifications & Build Requirements
 
--   Maya C++ SDK 2016 (MPxEmitterNode, MPxCommand).
--   Open3D Latest (point-cloud loading and saving: PLY/PCD).
--   Eigen3 3.x (3D math (core library)).
--   Boost 1.50+ Libraries (Filesystem, string utilities).
--   Standard C++11/14 multithreading, containers, algorithms.
--   Visual Studio 2013+.
+### Environment
+- **Maya SDK**: 2020+ (Targeted for performance and stability).
+- **Compiler**: Visual Studio 2017 / 2019 (v141/v142 toolsets).
+- **Language Standard**: C++17 (Utilizing modern STL and threading).
 
-------------------------------------------------------------------------
-
-# Build Requirements
-
--   Maya: 2016 or later\
--   Visual Studio: 2013 or later (2015+ recommended for full C++11/14
-    support)\
--   Dependencies:
-    -   Open3D (for PCL/PLY loading)\
-    -   Boost.Filesystem (for path operations)\
-    -   Eigen3 (for 3D math operations)
+### External Libraries
+- **Open3D 0.12+**: High-performance point-cloud I/O (PLY/PCD).
+- **Eigen3 3.3.7+**: Optimized linear algebra for 3D math.
+- **Boost 1.70+**: Filesystem and string utility support.
 
 ------------------------------------------------------------------------
+
 
 # Building
 
 1.  Open the Visual Studio solution file\.
-2.  Configure build settings:
-    -   Set Maya SDK path\
-    -   Set Open3D, Boost, and Eigen include/library paths\
-    -   Ensure C++11 or later standard is enabled\.
-3.  Build the solution in Release mode\.
-4.  Copy the generated `.mll` file to Maya's plugin directory.
+2. **Configure Settings**:
+    - Set Maya SDK, Open3D, Boost, and Eigen3 include/library paths.
+    - Ensure **C++17 standard** is enabled in Project Properties.
+3. **Build**: Compile in **Release** mode for **x64**.
+4. **Deploy**: Copy the `.mll` file to your Maya plug-ins directory.
 
 ------------------------------------------------------------------------
 
 ## Troubleshooting
 
 ### Plugin Won't Load
-- Verify Maya version compatibility (2016+).
+- Verify Maya version compatibility (2020+).
 - Check that all dependencies (Open3D, Boost, Eigen) are properly linked.
 - Ensure Visual Studio runtime libraries are available.
 
@@ -379,18 +371,21 @@ For full usage documentation, see [docs/USAGE.md](USAGE.md)
 
 ------------------------------------------------------------------------
 
-## Version
-**Current Version**: 1.0.1  
-**Maya Compatibility**: 2016+  
-**Build System**: Visual Studio 2013+
+## ⚖️ Status & Project Origin
+**Legacy Portfolio Project (v1.0.1)** This suite was inspired by high-performance data-processing workflows I developed at Intel. It was rebuilt entirely from scratch as a personal project to demonstrate experience with **C++17, Maya API, and multithreading**. 
 
-## Status
-Legacy plugin.  
-Designed for Maya 2016, Visual Studio, Open3D, Boost.  
-Kept publicly to demonstrate experience with C++, Maya API, geometry processing, multithreading, and point-cloud tooling.  
-Not actively maintained.
+- **Compatibility**: Maya 2020+ | Windows | VS 2017-2019.
+- **Maintenance**: Not actively maintained; kept for technical demonstration.
+
+
+## Contact & Author
+**Perry Guy** - Technical Artist & CG Engineer  
+*Extensive experience in 3D Graphics, Tool Development, and Performance Optimization.*
+
+📧 **Email**: [perryguy2@gmail.com](mailto:perryguy2@gmail.com)
+
+**YouTube Channel**: [@ThePerryGuy](https://www.youtube.com/@ThePerryGuy)
+
 
 ## License
-Copyright (c) Guy Perry.  
-For portfolio and educational purposes only.  
-Unauthorized use, copying, or distribution is prohibited.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
