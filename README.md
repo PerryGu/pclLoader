@@ -397,6 +397,14 @@ For full usage documentation, see [docs/USAGE.md](USAGE.md)
 - **Compatibility**: Maya 2020+ | Windows | VS 2017-2019.
 - **Maintenance**: Not actively maintained; kept for technical demonstration.
 
+---
+
+## See also
+
+- [scatteringNode](https://github.com/PerryGu/scatteringNode) — Maya C++ plugin for fast surface and volume point-cloud scatter (first-and-last-hit). The production volume-fill path.
+- [scatteringNet](https://github.com/PerryGu/scatteringNet) — occupancy network for the same volume-fill question (CAD train, inspect on shapes not in the catalog). Not a replacement for a ray test.
+
+---
 
 ## Contact & Author
 **Perry Guy** - Technical Artist & CG Engineer  
