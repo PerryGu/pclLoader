@@ -407,7 +407,7 @@ For full usage documentation, see [docs/USAGE.md](USAGE.md)
 ---
 
 ## Contact & Author
-**Perry Guy** - Technical Artist & CG Engineer  
+**Perry Guy** - Software Engineer & Technical Artist
 *Extensive experience in 3D Graphics, Tool Development, and Performance Optimization.*
 
 📧 **Email**: [perryguy2@gmail.com](mailto:perryguy2@gmail.com)
